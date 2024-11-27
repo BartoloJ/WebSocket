@@ -5,6 +5,9 @@ var app = builder.Build();
 
 app.UseWebSockets();
 
+app.UseStaticFiles();
+app.UseRouting();
+
 app.Use(async (context, next) =>
 {
     if (context.Request.Path == "/ws")
